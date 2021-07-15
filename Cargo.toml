@@ -18,9 +18,14 @@ git = "https://github.com/servo/rust-xlib"
 libc = "*"
 
 [target.'cfg(windows)'.dependencies.winapi]
-version = "*"
+git = "https://github.com/DeepSignSecurity/winapi-rs.git"
+branch = "0.3"
+package = "winapi"
 features = ["windef", "ntdef", "minwindef", "wingdi", "winuser"]
 
 [dev-dependencies]
 bmp = "*"
 image = "*"
+
+[profile.release]
+lto = true
